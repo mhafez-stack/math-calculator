@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathCalculator</title>
+</head>
+<body>
+		<h1>Let's crunch some numbers ...</h1>
+
+    <form onsubmit="add();return false">
+    <label for="num1">Enter number: </label>
+    <input id="num1" type="text">
+    <br>
+    <br>
+    <label for="num2">Enter number:</label>
+    <input id="num2" type="text"> <input type="submit" value= "+">
+    <hr>
+    <label><span id="success"> </span></label>
+    <br>
+    <label>Your Total = <span id="answer"> </span></label>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

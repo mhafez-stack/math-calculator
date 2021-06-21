@@ -35,28 +35,110 @@
     <div class="container">
         
         <div class="buttons">
-            <div class="display"></div>
-            <button id="numOne" class="justNum">1</button>
-            <button id="numTwo" class="justNum">2</button>
-            <button id="numThree" class="justNum">3</button>
+            <div id="display" class="display">0</div>
+            <button onclick="clickedOne()" id="numOne" class="justNum">1</button>
+            <button onclick="clickedTwo()" id="numTwo" class="justNum">2</button>
+            <button onclick="clickedThree()"id="numThree" class="justNum">3</button>
             <button id="additionOp" class="additionOp">&nbsp;+&nbsp;</button>
             <br>
-            <button id="numFour" class="justNum">4</button>
-            <button id="numFive" class="justNum">5</button>
-            <button id="numSix" class="justNum">6</button>
+            <button onclick="clickedFour()" id="numFour" class="justNum">4</button>
+            <button onclick="clickedFive()" id="numFive" class="justNum">5</button>
+            <button onclick="clickedSix()" id="numSix" class="justNum">6</button>
             <button id="subtractionOp" class="subtractionOp">&nbsp;-&nbsp;</button>
             <br>
-            <button id="numSeven" class="justNum">7</button>
-            <button id="numEight" class="justNum">8</button>
-            <button id="numNine" class="justNum">9</button>
+            <button onclick="clickedSeven()" id="numSeven" class="justNum">7</button>
+            <button onclick="clickedEight()" id="numEight" class="justNum">8</button>
+            <button onclick="clickedNine()" id="numNine" class="justNum">9</button>
             <button id="divisionOp" class="divisionOp">&nbsp;/&nbsp;</button>
             <br>
             <button id="clearOp" class="clearOp">C</button>
-            <button id="numZero" class="justNum">0</button>
-            <button id="floatOp" class="floatOp">.</button>
+            <button onclick="clickedZero()" id="numZero" class="justNum">0</button>
+            <button onclick="clickedDecimal()" id="decimalOp" class="decimalOp">.</button>
             <button id="multiplyOp" class="multiplyOp">&nbsp;x&nbsp;</button>
         </div>
     </div>
+
+    <script type ="text/javascript">       
+        
+        function clickedOne() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +1
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedTwo() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +2
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedThree() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +3
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedFour() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +4
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedFive() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +5
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedSix() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +6
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedSeven() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +7
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedEight() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +8
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+        function clickedNine() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +9
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        function clickedZero() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow +0
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+
+        function clickedDecimal() {
+            let displayNow  = document.getElementById('display').innerText
+            displayNow = displayNow + '.'
+            document.getElementById('display').innerText = displayNow;            
+
+        }
+
+        
+    </script>
 
 
 </body>

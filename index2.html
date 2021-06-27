@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Basic Calculator</title>
+  <style>
+      *, *::before , *::after{
+          margin:0;
+          padding:0;
+
+      }
+      body{
+        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+      }
+      button{
+          width:100px;
+          height:100px;
+          font-family: 'Courier New', Courier, monospace;
+          font-size:2rem;
+      }
+      button:hover{
+          background-color: black;
+          color:#fff;
+      }
+      .container{
+          width:50%;
+          margin:20px auto;
+          justify-content: center;
+          text-align: center;
+      }
+      .calculator{
+          display: grid;
+      }
+      .output{
+          margin: auto;
+          width:410px;
+          min-height:200px;
+         
+      }
+      .formulaDisplay{
+          min-height: 100px;
+          justify-content: center;
+          text-align: center;  
+          vertical-align: middle;
+          word-wrap: break-word;
+          word-break: break-all;  
+          background-color: black;
+          color:lime;  
+          font-size:2rem;
+          justify-content: center;
+          padding-top:20px;
+      }
+      .totalDisplay{
+          min-height: 100px;
+          justify-content: center;
+          text-align: center;
+          vertical-align: middle;
+          word-wrap: break-word;
+          word-break:  break-all;
+          background-color: black;
+          color:lime;
+          font-size: 3rem;
+          justify-content: center;
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="output">
+                <div id="formulaDisplay" class="formulaDisplay"></div>
+                <div id="totalDisplay" class="totalDisplay"></div>
+            </div>
+            <div class="input">
+                <button  id='numNine' class='button'>9</button>
+                <button  id='numEight' class='button'>8</button>
+                <button  id='numSeven' class='button'>7</button>
+                <button id='plus' class='button'>+</button>
+                <br>
+                <button id='numSix' class='button'>6</button>
+                <button  id='numFive' class='button'>5</button>
+                <button  id='numFour' class='button'>4</button>
+                <button   id='minus' class='button'>-</button>
+                <br>
+                <button id='numThree' class='button'>3</button>
+                <button  id='numTwo' class='button'>2</button>
+                <button  id='numOne' class='button'>1</button>
+                <button  id='multiply' class='button'>*</button>
+                <br>
+                <button  id='clear-all' class='button'>AC</button>
+                <button id='numZero' class='button'>0</button>
+                <button  id='decimal' class='button'>.</button>
+                <button  id='decimal' class='button'>/</button>
+                <br>
+                <button  id='decimal' class='button'>&larr;</button>
+                <button style="width: 308px;" id='myTotal' class="button">=</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+    <script>
+        let formulaDisplay = document.getElementById('formulaDisplay')
+        let totalDisplay = document.getElementById('totalDisplay')
+        let buttons =  Array.from(document.getElementsByClassName('button'))
+        buttons.map( button => {
+            button.addEventListener('click', (e) => {
+                switch(e.target.innerText){
+                    case 'AC':
+                        formulaDisplay.innerText = ''
+                        totalDisplay.innerText = ''
+                        break
+                    case '←':
+                        if (formulaDisplay.innerText){
+                            formulaDisplay.innerText = formulaDisplay.innerText.slice(0,-1)
+                        }
+                        break
+                    case '=':
+                        try{
+                            totalDisplay.innerText = eval(formulaDisplay.innerText)  
+                        }
+                        catch{
+                            totalDisplay.innerText = "Oops This is invalid Operation"   
+                        }
+                        break
+                    default:
+                        formulaDisplay.innerText += e.target.innerText
+                }
+            })
+        })
+
+    </script>
+
+</body>
+</html>
